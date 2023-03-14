@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--navbar boilerplate-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Sentiboost</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Analyze</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!--end navbar boilerplate-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <title>SentiBoost</title>
+</head>
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .form-floating {
+        position: relative;
+        max-width: 50vw; /* not relevant */
+        margin: auto; /* not relevant */
+      }
+
+      .form-floating:before {
+        content: '';
+        position: absolute;
+        top: 1px; /* border-width (default by BS) */
+        left: 1px; /* border-width (default by BS) */
+        width: calc(100% - 14px); /* to show scrollbar */
+        height: 32px;
+        border-radius: 4px; /* (default by BS) */
+        background-color: #ffffff;
+      }
+
+      .form-floating textarea.form-control {
+        padding-top: 32px; /* height of pseudo element */
+        min-height: 80px; /* not relevant */
+      }
+
+      .form-div {
+        width:50vw;
+        margin: auto;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .row{
+          align-items:center;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+<head>
+  
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" 
+          content="width=device-width,
+                   initial-scale=1, 
+                   shrink-to-fit=no" />
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" 
+          href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+          integrity=
+"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+          crossorigin="anonymous" />
+  
+    <title>Hello, world!</title>
+</head>
+<body>
+  <div class="text-center">
+    <h1 class="h3 m-3 fw-normal" style="font-size:4vw;"><strong>RESULTS</strong></h1>
+            <div class="banner">
+              <div class="container">
+                  <div class="row">
+                      <div class="text-center">
+                          <h3 class="m-3">Our model shows that this text shares similarities with {{ fakenews }} news</h3>
+                          <p class="m-3">This can mean a variety of different things, and should not be used as a baseline for any conclusive result. Instead, please examine the graphs below. These graphs examine how this text compares to the other sources of text used to train the model that detects for similarities with fake or reliable news.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <h3 class="m-3">How to Interpret the Graphs:</h3>
+        <div class="col-md-12">
+          <p class="m-3">Each graph is structured the same way. The Y axis represents if a datapoint from the fake/real news dataset is labeled as real or fake, with 0 being fake and 1 being real news. The X-axis is different on every graph, and represents the variable in the graph's title. The blue points are where each entry from the datset lies on this graph, and the orange curve is a representation of the probability for any point to be real or fake, created using logistic regression. The red line is where the inputted text from the user lies in comparison to the dataset. To get an idea of how your text compares to others, simply look for where the red line intersects with the logistic curve and the y value for that point is the probability for your text to be real or fake, using the articles from the dataset.</p>
+          <!-- <p> Text: {{ answer }} </p>  -->
+          <img width=50% height=auto src="/plot1.png" class="float-left" name="data plot 1" alt="data plot 1">
+          <img width=50% height=auto src="/plot2.png" class="float-right" name="data plot 2" alt="data plot 2">
+          <img width=50% height=auto src="/plot3.png" class="float-left" name="data plot 3" alt="data plot 3">
+          <img width=50% height=auto src="/plot4.png" class="float-right" name="data plot 4" alt="data plot 4">
+      </div>
+      </div>
+</body>
+</html>
+{% include bannercolor %}
